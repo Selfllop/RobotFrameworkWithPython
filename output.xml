@@ -1,0 +1,485 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.1.1 (Python 3.11.2 on win32)" generated="20231220 01:08:01.197" rpa="false" schemaversion="4">
+<suite id="s1" name="pythonProject2" source="C:\Users\SUBHRAJYOTI\PycharmProjects\pythonProject2">
+<suite id="s1-s1" name="robotFramewoek" source="C:\Users\SUBHRAJYOTI\PycharmProjects\pythonProject2\robotFramewoek">
+<suite id="s1-s1-s1" name="Test-Bams.Web.App" source="C:\Users\SUBHRAJYOTI\PycharmProjects\pythonProject2\robotFramewoek\test-bams.web.app.robot">
+<test id="s1-s1-s1-t1" name="Validate the login details" line="19">
+<kw name="Invoke the Broswer" library="Landingpage">
+<kw name="Create Webdriver" library="SeleniumLibrary">
+<arg>Chrome</arg>
+<arg>executable_path=/Users/SUBHRAJYOTI/Downloads/chromedriver-win32/chromedriver-win32/chromedriver.exe</arg>
+<doc>Creates an instance of Selenium WebDriver.</doc>
+<msg timestamp="20231220 01:08:01.467" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
+<status status="PASS" starttime="20231220 01:08:01.467" endtime="20231220 01:08:02.744"/>
+</kw>
+<kw name="Go To" library="SeleniumLibrary">
+<arg>https://www.saucedemo.com/</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20231220 01:08:02.744" level="INFO">Opening url 'https://www.saucedemo.com/'</msg>
+<status status="PASS" starttime="20231220 01:08:02.744" endtime="20231220 01:08:03.495"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20231220 01:08:03.495" endtime="20231220 01:08:03.619"/>
+</kw>
+<status status="PASS" starttime="20231220 01:08:01.467" endtime="20231220 01:08:03.619"/>
+</kw>
+<kw name="signin using login credentials" library="Landingpage">
+<arg>${username}</arg>
+<arg>${password}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id=user-name</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231220 01:08:03.621" level="INFO">Typing text 'standard_user' into text field 'id=user-name'.</msg>
+<status status="PASS" starttime="20231220 01:08:03.620" endtime="20231220 01:08:03.822"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id=password</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231220 01:08:03.822" level="INFO">Typing text 'secret_sauce' into text field 'id=password'.</msg>
+<status status="PASS" starttime="20231220 01:08:03.822" endtime="20231220 01:08:03.892"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>id:login-button</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231220 01:08:03.894" level="INFO">Clicking element 'id:login-button'.</msg>
+<status status="PASS" starttime="20231220 01:08:03.892" endtime="20231220 01:08:03.983"/>
+</kw>
+<status status="PASS" starttime="20231220 01:08:03.620" endtime="20231220 01:08:03.984"/>
+</kw>
+<status status="PASS" starttime="20231220 01:08:01.466" endtime="20231220 01:08:03.984"/>
+</test>
+<test id="s1-s1-s1-t2" name="After login validate Page name" line="22">
+<kw name="Get the page Title" library="Landingpage">
+<kw name="Title Should Be" library="SeleniumLibrary">
+<arg>Swag Labs</arg>
+<doc>Verifies that the current page title equals ``title``.</doc>
+<msg timestamp="20231220 01:08:03.994" level="INFO">Page title is 'Swag Labs'.</msg>
+<status status="PASS" starttime="20231220 01:08:03.987" endtime="20231220 01:08:03.994"/>
+</kw>
+<status status="PASS" starttime="20231220 01:08:03.986" endtime="20231220 01:08:03.994"/>
+</kw>
+<status status="PASS" starttime="20231220 01:08:03.986" endtime="20231220 01:08:03.996"/>
+</test>
+<test id="s1-s1-s1-t3" name="Verify Swag Labs Text in the web page" line="24">
+<kw name="Validate Swag Labs Text in the web page" library="Landingpage">
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${Text}</var>
+<arg>${SwagLabs}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20231220 01:08:04.038" level="INFO">${Text} = Swag Labs</msg>
+<status status="PASS" starttime="20231220 01:08:03.998" endtime="20231220 01:08:04.038"/>
+</kw>
+<kw name="Element Text Should Be" library="SeleniumLibrary">
+<arg>${SwagLabs}</arg>
+<arg>Swag Labs</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<msg timestamp="20231220 01:08:04.039" level="INFO">Verifying element 'css:.app_logo' contains exact text 'Swag Labs'.</msg>
+<status status="PASS" starttime="20231220 01:08:04.038" endtime="20231220 01:08:04.055"/>
+</kw>
+<status status="PASS" starttime="20231220 01:08:03.998" endtime="20231220 01:08:04.055"/>
+</kw>
+<status status="PASS" starttime="20231220 01:08:03.997" endtime="20231220 01:08:04.056"/>
+</test>
+<test id="s1-s1-s1-t4" name="Validate list of product" line="26">
+<kw name="Create list of product" library="Landingpage">
+<kw name="Create List" library="BuiltIn">
+<var>@{expectedProdects}</var>
+<arg>Sauce Labs Backpack</arg>
+<arg>Sauce Labs Bike Light</arg>
+<arg>Sauce Labs Bolt T-Shirt</arg>
+<arg>Sauce Labs Fleece Jacket</arg>
+<arg>Sauce Labs Onesie</arg>
+<arg>Test.allTheThings() T-Shirt (Red)</arg>
+<doc>Returns a list containing given items.</doc>
+<msg timestamp="20231220 01:08:04.057" level="INFO">@{expectedProdects} = [ Sauce Labs Backpack | Sauce Labs Bike Light | Sauce Labs Bolt T-Shirt | Sauce Labs Fleece Jacket | Sauce Labs Onesie | Test.allTheThings() T-Shirt (Red) ]</msg>
+<status status="PASS" starttime="20231220 01:08:04.057" endtime="20231220 01:08:04.057"/>
+</kw>
+<kw name="Get WebElements" library="SeleniumLibrary">
+<var>${elements}</var>
+<arg>css:.inventory_item</arg>
+<doc>Returns a list of WebElement objects matching the ``locator``.</doc>
+<msg timestamp="20231220 01:08:04.068" level="INFO">${elements} = [&lt;selenium.webdriver.remote.webelement.WebElement (session="cb29e138fc555bceaa00fa08ae96a1fc", element="28BBEFDB55C1AAA91F95E20992A08C79_element_33")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement...</msg>
+<status status="PASS" starttime="20231220 01:08:04.058" endtime="20231220 01:08:04.068"/>
+</kw>
+<kw name="Create List" library="BuiltIn">
+<var>@{actuallist}</var>
+<doc>Returns a list containing given items.</doc>
+<msg timestamp="20231220 01:08:04.068" level="INFO">@{actuallist} = [ ]</msg>
+<status status="PASS" starttime="20231220 01:08:04.068" endtime="20231220 01:08:04.068"/>
+</kw>
+<for flavor="IN">
+<var>${element}</var>
+<value>@{elements}</value>
+<iter>
+<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="cb29e138fc555bceaa00fa08ae96a1fc", element="28BBEFDB55C1AAA91F95E20992A08C79_element_33")&gt;</var>
+<kw name="Log" library="BuiltIn">
+<arg>${element.text}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20231220 01:08:04.081" level="INFO">Sauce Labs Backpack
+carry.allTheThings() with the sleek, streamlined Sly Pack that melds uncompromising style with unequaled laptop and tablet protection.
+$29.99
+Add to cart</msg>
+<status status="PASS" starttime="20231220 01:08:04.070" endtime="20231220 01:08:04.081"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${actuallist}</arg>
+<arg>${element.text}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20231220 01:08:04.081" endtime="20231220 01:08:04.106"/>
+</kw>
+<status status="PASS" starttime="20231220 01:08:04.068" endtime="20231220 01:08:04.106"/>
+</iter>
+<iter>
+<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="cb29e138fc555bceaa00fa08ae96a1fc", element="28BBEFDB55C1AAA91F95E20992A08C79_element_34")&gt;</var>
+<kw name="Log" library="BuiltIn">
+<arg>${element.text}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20231220 01:08:04.120" level="INFO">Sauce Labs Bike Light
+A red light isn't the desired state in testing but it sure helps when riding your bike at night. Water-resistant with 3 lighting modes, 1 AAA battery included.
+$9.99
+Add to cart</msg>
+<status status="PASS" starttime="20231220 01:08:04.107" endtime="20231220 01:08:04.120"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${actuallist}</arg>
+<arg>${element.text}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20231220 01:08:04.120" endtime="20231220 01:08:04.130"/>
+</kw>
+<status status="PASS" starttime="20231220 01:08:04.106" endtime="20231220 01:08:04.130"/>
+</iter>
+<iter>
+<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="cb29e138fc555bceaa00fa08ae96a1fc", element="28BBEFDB55C1AAA91F95E20992A08C79_element_35")&gt;</var>
+<kw name="Log" library="BuiltIn">
+<arg>${element.text}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20231220 01:08:04.138" level="INFO">Sauce Labs Bolt T-Shirt
+Get your testing superhero on with the Sauce Labs bolt T-shirt. From American Apparel, 100% ringspun combed cotton, heather gray with red bolt.
+$15.99
+Add to cart</msg>
+<status status="PASS" starttime="20231220 01:08:04.130" endtime="20231220 01:08:04.138"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${actuallist}</arg>
+<arg>${element.text}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20231220 01:08:04.138" endtime="20231220 01:08:04.148"/>
+</kw>
+<status status="PASS" starttime="20231220 01:08:04.130" endtime="20231220 01:08:04.148"/>
+</iter>
+<iter>
+<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="cb29e138fc555bceaa00fa08ae96a1fc", element="28BBEFDB55C1AAA91F95E20992A08C79_element_36")&gt;</var>
+<kw name="Log" library="BuiltIn">
+<arg>${element.text}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20231220 01:08:04.155" level="INFO">Sauce Labs Fleece Jacket
+It's not every day that you come across a midweight quarter-zip fleece jacket capable of handling everything from a relaxing day outdoors to a busy day at the office.
+$49.99
+Add to cart</msg>
+<status status="PASS" starttime="20231220 01:08:04.148" endtime="20231220 01:08:04.155"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${actuallist}</arg>
+<arg>${element.text}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20231220 01:08:04.156" endtime="20231220 01:08:04.164"/>
+</kw>
+<status status="PASS" starttime="20231220 01:08:04.148" endtime="20231220 01:08:04.164"/>
+</iter>
+<iter>
+<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="cb29e138fc555bceaa00fa08ae96a1fc", element="28BBEFDB55C1AAA91F95E20992A08C79_element_37")&gt;</var>
+<kw name="Log" library="BuiltIn">
+<arg>${element.text}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20231220 01:08:04.173" level="INFO">Sauce Labs Onesie
+Rib snap infant onesie for the junior automation engineer in development. Reinforced 3-snap bottom closure, two-needle hemmed sleeved and bottom won't unravel.
+$7.99
+Add to cart</msg>
+<status status="PASS" starttime="20231220 01:08:04.164" endtime="20231220 01:08:04.173"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${actuallist}</arg>
+<arg>${element.text}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20231220 01:08:04.173" endtime="20231220 01:08:04.182"/>
+</kw>
+<status status="PASS" starttime="20231220 01:08:04.164" endtime="20231220 01:08:04.182"/>
+</iter>
+<iter>
+<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="cb29e138fc555bceaa00fa08ae96a1fc", element="28BBEFDB55C1AAA91F95E20992A08C79_element_38")&gt;</var>
+<kw name="Log" library="BuiltIn">
+<arg>${element.text}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20231220 01:08:04.194" level="INFO">Test.allTheThings() T-Shirt (Red)
+This classic Sauce Labs t-shirt is perfect to wear when cozying up to your keyboard to automate a few tests. Super-soft and comfy ringspun combed cotton.
+$15.99
+Add to cart</msg>
+<status status="PASS" starttime="20231220 01:08:04.182" endtime="20231220 01:08:04.194"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${actuallist}</arg>
+<arg>${element.text}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20231220 01:08:04.194" endtime="20231220 01:08:04.206"/>
+</kw>
+<status status="PASS" starttime="20231220 01:08:04.182" endtime="20231220 01:08:04.206"/>
+</iter>
+<status status="PASS" starttime="20231220 01:08:04.068" endtime="20231220 01:08:04.206"/>
+</for>
+<kw name="Lists Should Be Equal" library="Collections">
+<arg>${expectedProdects}</arg>
+<arg>${actuallist}</arg>
+<doc>Fails if given lists are unequal.</doc>
+<msg timestamp="20231220 01:08:04.206" level="FAIL">Lists are different:
+Index 0: Sauce Labs Backpack != Sauce Labs Backpack
+carry.allTheThings() with the sleek, streamlined Sly Pack that melds uncompromising style with unequaled laptop and tablet protection.
+$29.99
+Add to cart
+Index 1: Sauce Labs Bike Light != Sauce Labs Bike Light
+A red light isn't the desired state in testing but it sure helps when riding your bike at night. Water-resistant with 3 lighting modes, 1 AAA battery included.
+$9.99
+Add to cart
+Index 2: Sauce Labs Bolt T-Shirt != Sauce Labs Bolt T-Shirt
+Get your testing superhero on with the Sauce Labs bolt T-shirt. From American Apparel, 100% ringspun combed cotton, heather gray with red bolt.
+$15.99
+Add to cart
+Index 3: Sauce Labs Fleece Jacket != Sauce Labs Fleece Jacket
+It's not every day that you come across a midweight quarter-zip fleece jacket capable of handling everything from a relaxing day outdoors to a busy day at the office.
+$49.99
+Add to cart
+Index 4: Sauce Labs Onesie != Sauce Labs Onesie
+Rib snap infant onesie for the junior automation engineer in development. Reinforced 3-snap bottom closure, two-needle hemmed sleeved and bottom won't unravel.
+$7.99
+Add to cart
+Index 5: Test.allTheThings() T-Shirt (Red) != Test.allTheThings() T-Shirt (Red)
+This classic Sauce Labs t-shirt is perfect to wear when cozying up to your keyboard to automate a few tests. Super-soft and comfy ringspun combed cotton.
+$15.99
+Add to cart</msg>
+<status status="FAIL" starttime="20231220 01:08:04.206" endtime="20231220 01:08:04.207"/>
+</kw>
+<status status="FAIL" starttime="20231220 01:08:04.057" endtime="20231220 01:08:04.207"/>
+</kw>
+<status status="FAIL" starttime="20231220 01:08:04.057" endtime="20231220 01:08:04.207">Lists are different:
+Index 0: Sauce Labs Backpack != Sauce Labs Backpack
+carry.allTheThings() with the sleek, streamlined Sly Pack that melds uncompromising style with unequaled laptop and tablet protection.
+$29.99
+Add to cart
+Index 1: Sauce Labs Bike Light != Sauce Labs Bike Light
+A red light isn't the desired state in testing but it sure helps when riding your bike at night. Water-resistant with 3 lighting modes, 1 AAA battery included.
+$9.99
+Add to cart
+Index 2: Sauce Labs Bolt T-Shirt != Sauce Labs Bolt T-Shirt
+Get your testing superhero on with the Sauce Labs bolt T-shirt. From American Apparel, 100% ringspun combed cotton, heather gray with red bolt.
+$15.99
+Add to cart
+Index 3: Sauce Labs Fleece Jacket != Sauce Labs Fleece Jacket
+It's not every day that you come across a midweight quarter-zip fleece jacket capable of handling everything from a relaxing day outdoors to a busy day at the office.
+$49.99
+Add to cart
+Index 4: Sauce Labs Onesie != Sauce Labs Onesie
+Rib snap infant onesie for the junior automation engineer in development. Reinforced 3-snap bottom closure, two-needle hemmed sleeved and bottom won't unravel.
+$7.99
+Add to cart
+Index 5: Test.allTheThings() T-Shirt (Red) != Test.allTheThings() T-Shirt (Red)
+This classic Sauce Labs t-shirt is perfect to wear when cozying up to your keyboard to automate a few tests. Super-soft and comfy ringspun combed cotton.
+$15.99
+Add to cart</status>
+</test>
+<test id="s1-s1-s1-t5" name="Validate select any cart item" line="28">
+<kw name="select any cart item" library="Landingpage">
+<arg>add-to-cart-sauce-labs-bolt-t-shirt</arg>
+<kw name="Get WebElements" library="SeleniumLibrary">
+<var>${elements}</var>
+<arg>xpath://button[@id='add-to-cart']</arg>
+<doc>Returns a list of WebElement objects matching the ``locator``.</doc>
+<msg timestamp="20231220 01:08:04.221" level="INFO">${elements} = []</msg>
+<status status="PASS" starttime="20231220 01:08:04.210" endtime="20231220 01:08:04.221"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${index}</var>
+<arg>1</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20231220 01:08:04.222" level="INFO">${index} = 1</msg>
+<status status="PASS" starttime="20231220 01:08:04.221" endtime="20231220 01:08:04.222"/>
+</kw>
+<for flavor="IN">
+<var>${element}</var>
+<value>@{elements}</value>
+<iter>
+<var name="${element}"/>
+<kw name="Exit For Loop If" library="BuiltIn">
+<arg>${cartname} == ${element.text}</arg>
+<doc>Stops executing the enclosing FOR loop if the ``condition`` is true.</doc>
+<status status="NOT RUN" starttime="20231220 01:08:04.222" endtime="20231220 01:08:04.222"/>
+</kw>
+<kw name="${index} + 1">
+<var>${index}</var>
+<status status="NOT RUN" starttime="20231220 01:08:04.224" endtime="20231220 01:08:04.224"/>
+</kw>
+<status status="NOT RUN" starttime="20231220 01:08:04.222" endtime="20231220 01:08:04.224"/>
+</iter>
+<status status="NOT RUN" starttime="20231220 01:08:04.222" endtime="20231220 01:08:04.224"/>
+</for>
+<kw name="Sleep" library="BuiltIn">
+<arg>5</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20231220 01:08:09.225" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20231220 01:08:04.224" endtime="20231220 01:08:09.225"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>xpath:(//button[@id='${cartname}'])</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20231220 01:08:09.226" level="INFO">Clicking button 'xpath:(//button[@id='add-to-cart-sauce-labs-bolt-t-shirt'])'.</msg>
+<status status="PASS" starttime="20231220 01:08:09.225" endtime="20231220 01:08:09.348"/>
+</kw>
+<status status="PASS" starttime="20231220 01:08:04.210" endtime="20231220 01:08:09.348"/>
+</kw>
+<status status="PASS" starttime="20231220 01:08:04.210" endtime="20231220 01:08:09.349"/>
+</test>
+<test id="s1-s1-s1-t6" name="Validate that cart is opening" line="30">
+<kw name="open the cart" library="Landingpage">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${Yourcart}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20231220 01:08:09.352" endtime="20231220 01:08:09.397"/>
+</kw>
+<kw name="Get WebElement" library="SeleniumLibrary">
+<var>${cartsymbol}</var>
+<arg>xpath://a[@class='shopping_cart_link']</arg>
+<doc>Returns the first WebElement matching the given ``locator``.</doc>
+<msg timestamp="20231220 01:08:09.414" level="INFO">${cartsymbol} = &lt;selenium.webdriver.remote.webelement.WebElement (session="cb29e138fc555bceaa00fa08ae96a1fc", element="28BBEFDB55C1AAA91F95E20992A08C79_element_19")&gt;</msg>
+<status status="PASS" starttime="20231220 01:08:09.397" endtime="20231220 01:08:09.414"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${cartsymbol}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20231220 01:08:09.414" level="INFO">Clicking button '&lt;selenium.webdriver.remote.webelement.WebElement (session="cb29e138fc555bceaa00fa08ae96a1fc", element="28BBEFDB55C1AAA91F95E20992A08C79_element_19")&gt;'.</msg>
+<status status="PASS" starttime="20231220 01:08:09.414" endtime="20231220 01:08:09.497"/>
+</kw>
+<kw name="Element Text Should Be" library="SeleniumLibrary">
+<arg>${Yourcart}</arg>
+<arg>Your Cart</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<msg timestamp="20231220 01:08:09.498" level="INFO">Verifying element 'css:.title' contains exact text 'Your Cart'.</msg>
+<status status="PASS" starttime="20231220 01:08:09.497" endtime="20231220 01:08:09.535"/>
+</kw>
+<status status="PASS" starttime="20231220 01:08:09.351" endtime="20231220 01:08:09.535"/>
+</kw>
+<status status="PASS" starttime="20231220 01:08:09.351" endtime="20231220 01:08:09.536"/>
+</test>
+<test id="s1-s1-s1-t7" name="validate user able to check out" line="32">
+<kw name="Able to check out" library="Landingpage">
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>xpath://button[@id='checkout']</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20231220 01:08:09.538" level="INFO">Clicking button 'xpath://button[@id='checkout']'.</msg>
+<status status="PASS" starttime="20231220 01:08:09.538" endtime="20231220 01:08:09.667"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${Checkouttext}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20231220 01:08:09.668" endtime="20231220 01:08:09.704"/>
+</kw>
+<kw name="Element Text Should Be" library="SeleniumLibrary">
+<arg>${Checkouttext}</arg>
+<arg>Checkout: Your Information</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<msg timestamp="20231220 01:08:09.704" level="INFO">Verifying element 'css:.title' contains exact text 'Checkout: Your Information'.</msg>
+<status status="PASS" starttime="20231220 01:08:09.704" endtime="20231220 01:08:09.736"/>
+</kw>
+<status status="PASS" starttime="20231220 01:08:09.538" endtime="20231220 01:08:09.736"/>
+</kw>
+<kw name="checkout form" library="Landingpage">
+<arg>${firstname}</arg>
+<arg>${lastname}</arg>
+<arg>${zipcode}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id:first-name</arg>
+<arg>${firstname}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231220 01:08:09.739" level="INFO">Typing text 'Rahul' into text field 'id:first-name'.</msg>
+<status status="PASS" starttime="20231220 01:08:09.738" endtime="20231220 01:08:09.922"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id:last-name</arg>
+<arg>${lastname}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231220 01:08:09.923" level="INFO">Typing text 'Bhowmick' into text field 'id:last-name'.</msg>
+<status status="PASS" starttime="20231220 01:08:09.922" endtime="20231220 01:08:10.137"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id:postal-code</arg>
+<arg>${zipcode}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231220 01:08:10.138" level="INFO">Typing text '712222' into text field 'id:postal-code'.</msg>
+<status status="PASS" starttime="20231220 01:08:10.137" endtime="20231220 01:08:10.332"/>
+</kw>
+<kw name="Get WebElement" library="SeleniumLibrary">
+<var>${continue}</var>
+<arg>id:continue</arg>
+<doc>Returns the first WebElement matching the given ``locator``.</doc>
+<msg timestamp="20231220 01:08:10.351" level="INFO">${continue} = &lt;selenium.webdriver.remote.webelement.WebElement (session="cb29e138fc555bceaa00fa08ae96a1fc", element="28BBEFDB55C1AAA91F95E20992A08C79_element_63")&gt;</msg>
+<status status="PASS" starttime="20231220 01:08:10.332" endtime="20231220 01:08:10.351"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${continue}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20231220 01:08:10.352" level="INFO">Clicking button '&lt;selenium.webdriver.remote.webelement.WebElement (session="cb29e138fc555bceaa00fa08ae96a1fc", element="28BBEFDB55C1AAA91F95E20992A08C79_element_63")&gt;'.</msg>
+<status status="PASS" starttime="20231220 01:08:10.351" endtime="20231220 01:08:10.440"/>
+</kw>
+<status status="PASS" starttime="20231220 01:08:09.737" endtime="20231220 01:08:10.440"/>
+</kw>
+<kw name="Item verification" library="Landingpage">
+<kw name="Sleep" library="BuiltIn">
+<arg>9</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20231220 01:08:19.442" level="INFO">Slept 9 seconds</msg>
+<status status="PASS" starttime="20231220 01:08:10.441" endtime="20231220 01:08:19.442"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>id:finish</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20231220 01:08:19.443" level="INFO">Clicking button 'id:finish'.</msg>
+<status status="PASS" starttime="20231220 01:08:19.442" endtime="20231220 01:08:19.573"/>
+</kw>
+<kw name="Element Text Should Be" library="SeleniumLibrary">
+<arg>${Thankyoumessage}</arg>
+<arg>Thank you for your order!</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<msg timestamp="20231220 01:08:19.574" level="INFO">Verifying element 'css:.complete-header' contains exact text 'Thank you for your order!'.</msg>
+<status status="PASS" starttime="20231220 01:08:19.573" endtime="20231220 01:08:19.599"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>check out successfully</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20231220 01:08:19.599" level="INFO">check out successfully</msg>
+<status status="PASS" starttime="20231220 01:08:19.599" endtime="20231220 01:08:19.599"/>
+</kw>
+<status status="PASS" starttime="20231220 01:08:10.441" endtime="20231220 01:08:19.599"/>
+</kw>
+<status status="PASS" starttime="20231220 01:08:09.537" endtime="20231220 01:08:19.599"/>
+</test>
+<status status="FAIL" starttime="20231220 01:08:01.221" endtime="20231220 01:08:19.601"/>
+</suite>
+<status status="FAIL" starttime="20231220 01:08:01.220" endtime="20231220 01:08:19.602"/>
+</suite>
+<status status="FAIL" starttime="20231220 01:08:01.199" endtime="20231220 01:08:19.603"/>
+</suite>
+<statistics>
+<total>
+<stat pass="6" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="6" fail="1" skip="0" id="s1" name="pythonProject2">pythonProject2</stat>
+<stat pass="6" fail="1" skip="0" id="s1-s1" name="robotFramewoek">pythonProject2.robotFramewoek</stat>
+<stat pass="6" fail="1" skip="0" id="s1-s1-s1" name="Test-Bams.Web.App">pythonProject2.robotFramewoek.Test-Bams.Web.App</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
